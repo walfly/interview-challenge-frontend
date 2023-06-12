@@ -35,7 +35,7 @@ export default function useRentals(initialData: RentalResponse) {
             'search': search,
         });
         router.replace('/?' + query.toString());
-    }, [offset, DEFAULT_LIMIT]);
+    }, [offset, search]);
 
     const goToPrevPage = useCallback(() => {
         const newOffset = (offset || DEFAULT_OFFSET) - DEFAULT_LIMIT;
@@ -44,7 +44,7 @@ export default function useRentals(initialData: RentalResponse) {
             'search': search,
         });
         router.replace('/?' + query.toString());
-    }, [offset, search, DEFAULT_LIMIT]);
+    }, [offset, search]);
 
     return {
         isLoading,
