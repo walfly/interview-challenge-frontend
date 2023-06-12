@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 32px 0;
+    gap: 16px;
+    width: 100%;
+}
+
+.name {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--grayscale2)
+}
+
+.image {
+    border-radius: 8px;
+    object-fit: cover;
+    width: 150px;
+    height: 100px;
+}

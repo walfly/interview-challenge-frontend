@@ -1,6 +1,5 @@
 import { ChangeEvent, FC } from "react";
 import styles from "./SearchBarStyle.module.css"
-import useRentals from "../hooks/useRentals";
 
 type SearchBarProps = {
     value: string,

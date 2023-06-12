@@ -1,4 +1,5 @@
 import { Rental } from "@/types/rentalSearch";
+import RentalItem from "./rentalItem/RentalItem";
 
  type ResultsProps = {
     rentals: Rental[];
@@ -6,11 +7,10 @@ import { Rental } from "@/types/rentalSearch";
 
  export default function Results({ rentals }: ResultsProps) {
     return (
-        <div>
+        <ul>
             {rentals.map(rental => (
-                <p key={rental.id}>{rental.attributes.name}</p>
+                <RentalItem key={rental.id} item={rental} />
             ))}
-        </div>
+        </ul>
     );
  }
- 
