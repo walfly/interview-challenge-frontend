@@ -10,7 +10,7 @@ type PaginationProps = {
   total: number,
 }
 
-export default function({offset = DEFAULT_OFFSET, limit = DEFAULT_LIMIT, total}: PaginationProps) {
+export default function PaginationControls({offset = DEFAULT_OFFSET, limit = DEFAULT_LIMIT, total}: PaginationProps) {
   const currentPage = Math.floor(offset / limit) + 1;
   const totalPages = Math.ceil(total / limit);
   const searchParams = useSearchParams();
@@ -38,6 +38,5 @@ export default function({offset = DEFAULT_OFFSET, limit = DEFAULT_LIMIT, total}:
         next
       </Link>
     )}
-  </div>)
-
+  </div>);
 }

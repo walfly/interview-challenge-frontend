@@ -1,4 +1,4 @@
-export default (value: string | null | undefined) => {
+const resolveQueryParamToNumberOrUndefined = (value: string | null | undefined) => {
   let resolvedValue: number | undefined;
   if (value !== undefined && value !== null) {
     resolvedValue = parseInt(value, 10);
@@ -8,3 +8,5 @@ export default (value: string | null | undefined) => {
   }
   return resolvedValue;
 }
+
+export default resolveQueryParamToNumberOrUndefined;

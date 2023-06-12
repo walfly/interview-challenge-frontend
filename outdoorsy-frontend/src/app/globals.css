@@ -22,9 +22,9 @@ ul {
 }
 
 :root {
-    /* variables */
-    /* colors */
-    --grayscale1: #000;
-    --grayscale2: #505050;
-    --grayscale3: #dedede;
+  /* variables */
+  /* colors */
+  --grayscale1: #000;
+  --grayscale2: #505050;
+  --grayscale3: #dedede;
 }
