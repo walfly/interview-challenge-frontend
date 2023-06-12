@@ -6,11 +6,14 @@ import RentalItem from "./rentalItem/RentalItem";
  }
 
  export default function Results({ rentals }: ResultsProps) {
-    return (
+    const noResults = rentals.length === 0;
+    console.log(rentals.length);
+    return (<>
+        {noResults && (<p>Uh oh! We don't have anything that matches that search</p>)}
         <ul>
             {rentals.map(rental => (
                 <RentalItem key={rental.id} item={rental} />
             ))}
         </ul>
-    );
+    </>);
  }
