@@ -9,7 +9,7 @@ type Props = {
 export default function RentalItem({ item }: Props) {
   return (
     <li className={style.container}>
-      <Image width={150} height={100} className={style.image} src={item.attributes.primary_image_url} alt={item.attributes.name} />
+      <Image width={150} height={100} quality={5} priority={true} className={style.image} src={item.attributes.primary_image_url} alt={item.attributes.name} />
       <h3 className={style.name}>{item.attributes.name}</h3>
     </li>
   );

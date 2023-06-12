@@ -28,24 +28,6 @@ export default function useRentals(initialData: RentalResponse) {
         isFetching
     } = useQuery(['rentals', search, offset], () => fetchRentals(search, offset), { initialData });
 
-    const goToNextPage = useCallback(() => {
-        const newOffset = (offset || DEFAULT_OFFSET) + DEFAULT_LIMIT;
-        const query = new URLSearchParams({
-            'offset': newOffset.toString(),
-            'search': search,
-        });
-        router.replace('/?' + query.toString());
-    }, [offset, search]);
-
-    const goToPrevPage = useCallback(() => {
-        const newOffset = (offset || DEFAULT_OFFSET) - DEFAULT_LIMIT;
-        const query = new URLSearchParams({
-            'offset': newOffset.toString(),
-            'search': search,
-        });
-        router.replace('/?' + query.toString());
-    }, [offset, search]);
-
     return {
         isLoading,
         isError,
@@ -55,7 +37,5 @@ export default function useRentals(initialData: RentalResponse) {
         setSearch,
         search,
         offset,
-        goToNextPage,
-        goToPrevPage,
     }
 }

@@ -17,15 +17,13 @@ export default function RentalSearch(props: RentalSearchProps) {
         isLoading,
         data,
         offset,
-        goToNextPage,
-        goToPrevPage
     } = useRentals(props.initialData);
     return (<>
         <SearchBar value={search} onChange={(e: ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)} />
         {isLoading && <p>Loading...</p>}
         {(!isLoading && !!data) && (<>
             <Results rentals={data.data} />
-            <PaginationControls total={data.meta.total} offset={offset} next={goToNextPage} prev={goToPrevPage} />
+            <PaginationControls total={data.meta.total} offset={offset} />
         </>)}
     </>)
 }
